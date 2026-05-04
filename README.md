@@ -11,6 +11,7 @@ File CMakeLists.txt.model
 File data/data.sql.model
     Rename to data.sql
     Use argon2_hash.cpp file to generate argon2 hash.
+    Or use hash_command.cpp to generate argon2 hash using environment variables.
 File install.sql.model
     Rename to install.sql
     Set root password
