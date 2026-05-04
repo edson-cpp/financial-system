@@ -20,16 +20,23 @@ std::string generateSalt(size_t size = 16) {
 }
 
 int main() {
-    std::string userPassword = "P9L2rX$*SPOwmp";
+    // User password stored in an environment variable.
+    const char* userPwdEnv = std::getenv("USER_PASSWORD");
 
     // Pepper stored in an environment variable.
     const char* pepperEnv = std::getenv("PASSWORD_PEPPER");
+
+    if (!userPwdEnv) {
+        std::cerr << "USER_PASSWORD not defined.\n";
+        return 1;
+    }
 
     if (!pepperEnv) {
         std::cerr << "PASSWORD_PEPPER not defined.\n";
         return 1;
     }
 
+    std::string userPassword = userPwdEnv;
     std::string pepper = pepperEnv;
 
     // concatenate password + pepper
