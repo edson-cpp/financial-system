@@ -1,6 +1,14 @@
 # Created by https://www.toptal.com/developers/gitignore/api/intellij+all,visualstudio,visualstudiocode,cmake,c,c++
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,visualstudio,visualstudiocode,cmake,c,c++
 
+### specific files ###
+hash_cmd.cpp
+config.json
+CMakeLists.txt
+data/data.sql
+data/install.sql
+data/priv.sql
+
 ### C ###
 # Prerequisites
 *.d
