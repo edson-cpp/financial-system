@@ -24,6 +24,8 @@ std::string register_page::genText(const DrTemplateData& register_page_view_data
 	register_page_tmp_stream << "    <title>User Registration</title>\n";
 	register_page_tmp_stream << "</head>\n";
 	register_page_tmp_stream << "<body>\n";
+	register_page_tmp_stream << "    <center>\n";
+	register_page_tmp_stream << "    <br><br>\n";
 	register_page_tmp_stream << "    <h2>Register User</h2>\n";
 register_page_tmp_stream<<"\n";
 	register_page_tmp_stream << "    <form method=\"POST\" action=\"/register\">\n";
@@ -38,6 +40,7 @@ register_page_tmp_stream<<"\n";
 register_page_tmp_stream<<"\n";
 	register_page_tmp_stream << "        <button type=\"submit\">Register</button>\n";
 	register_page_tmp_stream << "    </form>\n";
+	register_page_tmp_stream << "    </center>\n";
 	register_page_tmp_stream << "</body>\n";
 	register_page_tmp_stream << "</html>\n";
 if(layoutName.empty())

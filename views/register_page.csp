@@ -4,6 +4,8 @@
     <title>User Registration</title>
 </head>
 <body>
+    <center>
+    <br><br>
     <h2>Register User</h2>
 
     <form method="POST" action="/register">
@@ -18,5 +20,6 @@
 
         <button type="submit">Register</button>
     </form>
+    </center>
 </body>
 </html>

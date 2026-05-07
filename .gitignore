@@ -4,7 +4,6 @@
 ### specific files ###
 hash_cmd.cpp
 config.json
-CMakeLists.txt
 data/data.sql
 data/install.sql
 data/priv.sql
