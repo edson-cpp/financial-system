@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial System</title>
+</head>
+<body>
+    <br><br>
+    <center>
+    <h2>Dashboard</h2>
+
+    <form method="POST" action="/logout">
+        <button type="submit">Logout</button>
+    </form>
+    </center>
+</body>
+</html>

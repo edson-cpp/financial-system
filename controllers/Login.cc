@@ -7,6 +7,17 @@ void Login::loginForm(
     const HttpRequestPtr &req,
     std::function<void (const HttpResponsePtr &)> &&callback)
 {
+    auto session = req->session();
+
+    if (session->find("user_id"))
+    {
+        auto resp =
+            HttpResponse::newRedirectionResponse("/dashboard");
+
+        callback(resp);
+        return;
+    }
+
     auto resp = HttpResponse::newHttpViewResponse("login");
     callback(resp);
 }
@@ -23,8 +34,8 @@ void Login::loginUser(
     auto db = app().getDbClient();
 
     db->execSqlAsync(
-        "SELECT pwd FROM users WHERE login = ?",
-        [callback, pwd](const orm::Result& r) {
+        "SELECT users_id, pwd FROM users WHERE login = ?",
+        [callback, pwd, req](const orm::Result& r) {
             if (r.empty()) {
                 auto resp = HttpResponse::newHttpResponse();
                 resp->setBody("User not found"); // later: redirect
@@ -36,12 +47,34 @@ void Login::loginUser(
             std::string pepper = pepperEnv;
             std::string finalPwd = pwd + pepper;
 
+            int userId = r[0]["users_id"].as<int>();
             std::string hash = r[0]["pwd"].as<std::string>();
 
 
             if (argon2id_verify(hash.c_str(), finalPwd.c_str(), finalPwd.size()) == ARGON2_OK) {
-                auto resp = HttpResponse::newHttpResponse();
-                resp->setBody("Login OK"); // later: redirect
+                auto session = req->session();
+
+                session->insert("user_id", userId);
+
+                std::string csrfToken = utils::getUuid();
+                session->insert("csrf_token", csrfToken);
+                HttpViewData data;
+                data.insert("csrf_token", csrfToken);
+
+                std::string redirectTo = "/dashboard";
+
+                if (session->find("redirect_after_login"))
+                {
+                    redirectTo =
+                        session->get<std::string>(
+                            "redirect_after_login"
+                        );
+
+                    session->erase("redirect_after_login");
+                }
+
+                auto resp = HttpResponse::newRedirectionResponse(redirectTo);
+
                 callback(resp);
             } else {
                 auto resp = HttpResponse::newHttpResponse();

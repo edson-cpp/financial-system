@@ -36,6 +36,7 @@ login_tmp_stream<<"\n";
 	login_tmp_stream << "        <input type=\"password\" name=\"pwd\" required><br><br>\n";
 login_tmp_stream<<"\n";
 	login_tmp_stream << "        <button type=\"submit\">Login</button>\n";
+	login_tmp_stream << "        <input type=\"hidden\" name=\"csrf_token\" value=\"{{csrf_token}}\"/>\n";
 	login_tmp_stream << "    </form>\n";
 	login_tmp_stream << "    </center>\n";
 	login_tmp_stream << "</body>\n";
