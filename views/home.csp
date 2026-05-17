@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial System</title>
+</head>
+<body>
+    <br><br>
+    <center>
+    <h2>Welcome to Edson's Financial System</h2>
+    <h5>Click on button bellow to login</h5>
+
+    <form method="GET" action="/login">
+        <button type="submit">Goto Login</button>
+    </form>
+    </center>
+</body>
+</html>
