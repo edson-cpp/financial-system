@@ -9,7 +9,6 @@ data/data.sql
 data/install.sql
 data/priv.sql
 build/
-test/
 files/
 
 ### C ###
