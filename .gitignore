@@ -2,13 +2,20 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=intellij+all,visualstudio,visualstudiocode,cmake,c,c++
 
 ### specific files ###
-hash_cmd.cpp
-config.json
+hash_cmd
+hash
+argon2_hash
 data/data.sql
 data/install.sql
 data/priv.sql
+build/
+test/
+files/
 
 ### C ###
+# Kate swap
+*.kate-swp
+
 # Prerequisites
 *.d
 

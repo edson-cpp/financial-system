@@ -1,5 +1,6 @@
 #include "UserRegister.h"
 #include "../hash.cpp"
+#include <Database.h>
 
 using namespace drogon;
 
@@ -29,7 +30,7 @@ void UserRegister::registerUser(
 
     std::string hashedPassword = getHash(pwd);
 
-    auto dbClient = app().getDbClient();
+    auto dbClient = Database::client();
 
     dbClient->execSqlAsync(
         R"(INSERT INTO users (name, login, pwd, national_id, national_id_type, 

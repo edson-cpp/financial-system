@@ -1,5 +1,7 @@
 #include "Login.h"
 #include <argon2.h>
+#include "../middlewares/LoginRateLimitMiddleware.h"
+#include <Database.h>
 
 using namespace drogon;
 
@@ -31,7 +33,7 @@ void Login::loginUser(
     auto login = params["login"];
     auto pwd = params["pwd"];
 
-    auto db = app().getDbClient();
+    auto db = Database::client();
 
     db->execSqlAsync(
         "SELECT users_id, pwd FROM users WHERE login = ?",
@@ -73,6 +75,7 @@ void Login::loginUser(
                     session->erase("redirect_after_login");
                 }
 
+                LoginRateLimitMiddleware::resetAttempts(req->peerAddr().toIp());
                 auto resp = HttpResponse::newRedirectionResponse(redirectTo);
 
                 callback(resp);
