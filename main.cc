@@ -3,7 +3,7 @@
 
 int main() {
     const char* configPath = std::getenv("CONFIG_PATH");
-
+    
     if (!configPath){
         configPath = "../config.json";
     }

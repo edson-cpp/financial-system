@@ -1,16 +1,19 @@
 {
     "listeners": [
-      {
-        "address": "127.0.0.1",
-        "port": 8081,
-        "https": false
-      }
+        {
+            "address": "127.0.0.1",
+            "port": 8081,
+            "https": false
+        }
     ],
+
     "app": {
         "enable_session": true,
         "session_timeout": 1440,
-        "document_root": "../",
-        "dynamic_views_path": ["../views"]
+        "document_root": "../public"
     },
-    "views_path": "./views"
+
+    "dynamic_views_path": [
+        "../views"
+    ]
 }

@@ -9,6 +9,6 @@ void Logout::logout(
     session->erase("user_id");
     session->clear();
 
-    auto resp = HttpResponse::newRedirectionResponse("/login");
+    auto resp = HttpResponse::newRedirectionResponse("/");
     callback(resp);
 }

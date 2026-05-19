@@ -10,6 +10,7 @@ data/install.sql
 data/priv.sql
 build/
 files/
+*.copy
 
 ### C ###
 # Kate swap
