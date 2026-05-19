@@ -13,8 +13,7 @@ void Login::loginForm(
 
     if (session->find("user_id"))
     {
-        auto resp =
-            HttpResponse::newRedirectionResponse("/dashboard");
+        auto resp = HttpResponse::newRedirectionResponse("/dashboard");
 
         callback(resp);
         return;

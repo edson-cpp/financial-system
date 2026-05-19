@@ -6,8 +6,7 @@ void Dashboard::index(const HttpRequestPtr& req, std::function<void (const HttpR
 
     if (!session->find("user_id"))
     {
-        auto resp =
-            HttpResponse::newRedirectionResponse("/login");
+        auto resp = HttpResponse::newRedirectionResponse("/login");
 
         callback(resp);
         return;
