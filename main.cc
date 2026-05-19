@@ -5,10 +5,14 @@
 int main() {
     namespace fs = std::filesystem;
 
-    const char* configPath = std::getenv("CONFIG_PATH");
+    fs::path projectRoot = std::getenv("PROJECT_ROOT");
 
-    fs::path projectRoot =
-        fs::canonical("../");
+    if (projectRoot == ""){
+        fs::path projectRoot = fs::canonical("./");
+    }
+
+    auto configPath =
+        (projectRoot / "config.json").string();
 
     auto publicPath =
         (projectRoot / "public").string();
@@ -16,10 +20,6 @@ int main() {
     auto viewsPath =
         (projectRoot / "views").string();
     
-    if (!configPath){
-        configPath = "../config.json";
-    }
-
     Database::initialize();
     drogon::app()
         .setDocumentRoot(publicPath)
