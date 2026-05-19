@@ -9,11 +9,6 @@
 
     "app": {
         "enable_session": true,
-        "session_timeout": 1440,
-        "document_root": "../public"
-    },
-
-    "dynamic_views_path": [
-        "../views"
-    ]
+        "session_timeout": 1440
+    }
 }
