@@ -1,28 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR" class="supernova isBlack">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
     <title>User Registration</title>
+
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <center>
-    <br><br>
-    <h2>Register User</h2>
+    <form class="sysform-form" method="POST" action="/register" accept-charset="utf-8" autocomplete="on">
+        <div role="main" class="form-all">
+            <ul class="form-section" role="presentation">
+                <li id="cid_27" class="form-input-wide" data-type="control_head">
+                    <div class="form-header-group header-large">
+                        <div class="header-text httac htvam">
+                            <h1 id="header_27" class="form-header" data-component="header">User Registration</h1>
+                        </div>
+                    </div>
+                </li>
 
-    <form method="POST" action="/register">
-        <label>Name:</label><br>
-        <input type="text" name="name" autocomplete="name" required><br><br>
+                <li class="form-line" data-type="control_textbox" id="id_name">
+                    <label class="form-label form-label-top form-label-auto" id="label_name" for="name">Full Name</label>
+                    <div class="form-input-wide" data-layout="full">
+                        <input type="text" id="name" name="name" class="form-textbox" autocomplete="name" required>
+                    </div>
+                </li>
 
-        <label>Login:</label><br>
-        <input type="text" name="login" autocomplete="username" required><br><br>
+                <li class="form-line form-line-column" data-type="control_textbox" id="id_login">
+                    <label class="form-label form-label-top form-label-auto" id="label_login" for="login">Login</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <input type="text" id="login" name="login" class="form-textbox" autocomplete="username" required>
+                    </div>
+                </li>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" autocomplete="new-password" required><br><br>
+                <li class="form-line form-line-column" data-type="control_email" id="id_email">
+                    <label class="form-label form-label-top form-label-auto" id="label_email" for="email">E-mail Address</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <input type="email" id="email" name="email" class="form-textbox" autocomplete="email" placeholder="ex: myname@example.com" aria-describedby="email_hint email_error">
+                        <span id="email_hint" class="form-sub-label">example@example.com</span>
+                        <span id="email_error" class="form-error-message" aria-live="polite">Enter a valid e-mail address</span>
+                    </div>
+                </li>
 
-        <label>Confirm Password:</label><br>
-        <input type="password" name="confirm_password" autocomplete="new-password" required><br><br>
+                <li class="form-line form-line-column" data-type="control_dropdown" id="id_country_code">
+                    <label class="form-label form-label-top form-label-auto" id="label_country_code" for="country_code">Country</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <select id="country_code" name="country_code" class="form-dropdown" required>
+                            <option value="BR">Brazil</option>
+                        </select>
+                    </div>
+                </li>
 
-        <button type="submit">Register</button>
+                <li class="form-line form-line-column" data-type="control_phone" id="id_phone">
+                    <label class="form-label form-label-top form-label-auto" id="label_phone" for="phone">Contact Phone</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <input type="tel" id="phone" name="phone" class="form-textbox" autocomplete="tel" inputmode="numeric" maxlength="15" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(00) 00000-0000" aria-describedby="phone_error">
+                        <span id="phone_error" class="form-error-message" aria-live="polite">Enter a phone number in this format: (00) 00000-0000</span>
+                    </div>
+                </li>
+
+                <li class="form-line form-line-column" data-type="control_dropdown" id="id_national_id_type">
+                    <label class="form-label form-label-top form-label-auto" id="label_national_id_type" for="national_id_type">Document Type</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <select id="national_id_type" name="national_id_type" class="form-dropdown" required>
+                            <option value="CPF">CPF</option>
+                            <option value="CNPJ">CNPJ</option>
+                        </select>
+                    </div>
+                </li>
+
+                <li class="form-line form-line-column" data-type="control_textbox" id="id_national_id">
+                    <label class="form-label form-label-top form-label-auto" id="label_national_id" for="national_id">Document ID</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <input type="text" id="national_id" name="national_id" class="form-textbox" maxlength="14" required>
+                    </div>
+                </li>
+
+                <li class="form-line form-line-column" data-type="control_textbox" id="id_pwd">
+                    <label class="form-label form-label-top form-label-auto" id="label_pwd" for="pwd">Password</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <input type="password" id="pwd" name="pwd" class="form-textbox" autocomplete="new-password" required>
+                    </div>
+                </li>
+
+                <li class="form-line form-line-column" data-type="control_textbox" id="id_confirm_password">
+                    <label class="form-label form-label-top form-label-auto" id="label_confirm_password" for="confirm_password">Confirm Password</label>
+                    <div class="form-input-wide" data-layout="half">
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-textbox" autocomplete="new-password" required>
+                    </div>
+                </li>
+
+                <li class="form-line" data-type="control_button" id="id_submit">
+                    <div data-align="auto" class="form-buttons-wrapper">
+                        <button id="register_submit" type="submit" class="form-submit-button form-submit-button-carbon_rounded" data-component="button">
+                            Register
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </form>
-    </center>
+    <script src="/js/register.js"></script>
 </body>
 </html>

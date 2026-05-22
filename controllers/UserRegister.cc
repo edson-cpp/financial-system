@@ -21,12 +21,21 @@ void UserRegister::registerUser(
     std::string name = params["name"];
     std::string login = params["login"];
     std::string pwd = params["pwd"];
+    std::string confirmPassword = params["confirm_password"];
     std::string national_id = params["national_id"];
     std::string national_id_type = params["national_id_type"];
     std::string country_code = params["country_code"];
     std::string phone = params["phone"];
     std::string email = params["email"];
     std::uint8_t level = 1; //static_cast<uint8_t>(std::stoi(params["level"]));
+
+    if (pwd.empty() || pwd != confirmPassword) {
+        auto resp = HttpResponse::newHttpResponse();
+        resp->setStatusCode(k400BadRequest);
+        resp->setBody("Password confirmation does not match.");
+        callback(resp);
+        return;
+    }
 
     std::string hashedPassword = getHash(pwd);
 
