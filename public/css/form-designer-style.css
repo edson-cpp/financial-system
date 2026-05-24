@@ -61,12 +61,13 @@ button {
     width: 100%;
     max-width: 752px;
     margin: 0 auto;
-    background-color: #60626c;
+    background-color: #000000;
     background-image: none;
     color: #ffffff;
     font-size: 16px;
     border-radius: 3px;
     margin-bottom: 40px;
+    border-radius: 18px 18px 18px 18px;
 }
 
 .form-section {
@@ -126,7 +127,8 @@ button {
     min-height: 40px;
     padding: 0 12px;
     color: #2c3345;
-    background-color: #e3e3e3;
+    /*background-color: #e7e3b3;*/
+    background-color: #ffffff;
     border: 1px solid #b8bdc9;
     border-radius: 4px;
     box-shadow: none;
@@ -243,6 +245,28 @@ button {
 
 .form-buttons-auto {
     justify-content: center;
+}
+
+.login-button {
+    background: #d11c1c;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 18px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+    min-width: 300px;
+}
+
+.login-button:hover {
+    opacity: 0.9;
 }
 
 .form-submit-button,

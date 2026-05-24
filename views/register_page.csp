@@ -85,7 +85,7 @@
 
                 <li class="form-line" data-type="control_button" id="id_submit">
                     <div data-align="auto" class="form-buttons-wrapper">
-                        <button id="register_submit" type="submit" class="form-submit-button form-submit-button-carbon_rounded" data-component="button">
+                        <button id="register_submit" type="submit" class="login-button" data-component="button">
                             Register
                         </button>
                     </div>
