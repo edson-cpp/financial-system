@@ -10,21 +10,30 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #e3e9f7;
+    /*background-color: #e3e9f7;*/
+    background-color: #000000;
 }
 
 main {
-    padding: 20px;
-    position: fixed;
-    z-index: 1;
-    padding-left: calc(82px + 20px);
+    margin-left: 60px;
+    width: calc(100% - 260px);
+
+    display: flex;
+    justify-content: center; /* horizontal center */
+    align-items: flex-start; /* stick to top */
+
+    padding-top: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    min-height: 100vh;
 }
 
 #sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: #60626c;
     height: 100vh;
     border-radius: 0px 18px 18px 0px;
     position: relative;

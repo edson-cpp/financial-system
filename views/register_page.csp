@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR" class="supernova isBlack">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-    <title>User Registration</title>
-
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+<div class="supernova" id="page-content">
     <form class="sysform-form" method="POST" action="/register" accept-charset="utf-8" autocomplete="on">
         <div role="main" class="form-all">
             <ul class="form-section" role="presentation">
                 <li id="cid_27" class="form-input-wide" data-type="control_head">
                     <div class="form-header-group header-large">
                         <div class="header-text httac htvam">
-                            <h1 id="header_27" class="form-header" data-component="header">User Registration</h1>
+                            <h1 id="header_27" class="form-header" data-component="header">
+                                User Registration
+                            </h1>
                         </div>
                     </div>
                 </li>
@@ -98,9 +90,8 @@
                         </button>
                     </div>
                 </li>
+
             </ul>
         </div>
     </form>
-    <script src="/js/register.js"></script>
-</body>
-</html>
+</div>

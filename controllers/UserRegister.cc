@@ -8,6 +8,14 @@ void UserRegister::registerForm(
     const HttpRequestPtr &req,
     std::function<void (const HttpResponsePtr &)> &&callback)
 {
+    auto resp = HttpResponse::newRedirectionResponse("/dashboard?page=register");
+    callback(resp);
+}
+
+void UserRegister::registerContent(
+    const HttpRequestPtr &req,
+    std::function<void (const HttpResponsePtr &)> &&callback)
+{
     auto resp = HttpResponse::newHttpViewResponse("register_page");
     callback(resp);
 }

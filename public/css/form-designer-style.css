@@ -37,12 +37,13 @@ button {
 }
 
 .supernova {
-    background-color: #12121c;
+    background-color: #e3e9f7;
     background-image: none;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center top;
+    overflow-y: auto;
 }
 
 .supernova body {
@@ -51,6 +52,7 @@ button {
 
 .sysform-form {
     width: 100%;
+    margin-top: 0;
 }
 
 .form-all {
@@ -58,12 +60,13 @@ button {
     flex-direction: column;
     width: 100%;
     max-width: 752px;
-    margin: 72px auto;
+    margin: 0 auto;
     background-color: #60626c;
     background-image: none;
     color: #ffffff;
     font-size: 16px;
     border-radius: 3px;
+    margin-bottom: 40px;
 }
 
 .form-section {
