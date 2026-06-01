@@ -62,7 +62,7 @@ void Login::loginUser(
                 HttpViewData data;
                 data.insert("csrf_token", csrfToken);
 
-                std::string redirectTo = "/dashboard";
+                std::string redirectTo = "/menu";
 
                 if (session->find("redirect_after_login"))
                 {

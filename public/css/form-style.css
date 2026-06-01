@@ -61,7 +61,7 @@ button {
     width: 100%;
     max-width: 752px;
     margin: 0 auto;
-    background-color: #000000;
+    background-color: #242525;
     background-image: none;
     color: #ffffff;
     font-size: 16px;
@@ -126,10 +126,9 @@ button {
     width: 100%;
     min-height: 40px;
     padding: 0 12px;
-    color: #2c3345;
-    /*background-color: #e7e3b3;*/
-    background-color: #ffffff;
-    border: 1px solid #b8bdc9;
+    color: #fff;
+    background-color: #282a2a;
+    border: 2px solid #b8bdc9;
     border-radius: 4px;
     box-shadow: none;
     line-height: 1.5;

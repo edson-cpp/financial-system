@@ -14,6 +14,10 @@ async function loadPage(url) {
 
         if (newContent) {
             document.querySelector('#content-area').innerHTML = newContent.innerHTML;
+
+            if (typeof window.initRegisterForm === 'function') {
+                window.initRegisterForm();
+            }
         }
     } catch (error) {
         console.error('Error loading page:', error);

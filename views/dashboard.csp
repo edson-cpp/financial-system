@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Elisa Financial System</title>
+</head>
+<body>
+    <main id="content-area">
+        <h1>Elisa Financial System</h1>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>

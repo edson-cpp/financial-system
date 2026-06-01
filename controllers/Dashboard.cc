@@ -1,17 +1,19 @@
 #include "Dashboard.h"
 
-void Dashboard::index(const HttpRequestPtr& req, std::function<void (const HttpResponsePtr &)> &&callback)
+using namespace drogon;
+
+void Dashboard::dashboardForm(
+    const HttpRequestPtr &req,
+    std::function<void (const HttpResponsePtr &)> &&callback)
 {
-    auto session = req->session();
+    auto resp = HttpResponse::newRedirectionResponse("/menu?page=dashboard");
+    callback(resp);
+}
 
-    if (!session->find("user_id"))
-    {
-        auto resp = HttpResponse::newRedirectionResponse("/login");
-
-        callback(resp);
-        return;
-    }
-
-    auto resp = HttpResponse::newHttpViewResponse("dashboard_page");
+void Dashboard::dashboardContent(
+    const HttpRequestPtr &req,
+    std::function<void (const HttpResponsePtr &)> &&callback)
+{
+    auto resp = HttpResponse::newHttpViewResponse("dashboard");
     callback(resp);
 }

@@ -15,6 +15,8 @@ add_executable(${PROJECT_NAME}
     Database.cc
     controllers/UserRegister.cc
     controllers/Login.cc
+    controllers/Dashboard.cc
+    controllers/Menu.cc
 )
 
 # ##############################################################################
